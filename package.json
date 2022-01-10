@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "truffle test --network development",
-    "format": "prettier --write **/**/*.{js,sol}"
+    "format": "prettier --write **/**/*.{js,sol}",
+    "deploy": "truffle migrate --network bsc_mainnet",
+    "flatten": "truffle-flattener contracts/Airdrop.sol > AirdropFlat.sol"
   },
   "repository": {
     "type": "git",
