@@ -19,7 +19,9 @@ contract Airdrop is Ownable {
     for (uint256 i = 0; i < _addresses.length; i++) {
       require(_addresses[i] != address(0), 'cannot send to zero address');
       require(_addresses[i] != address(this), 'cannot send to this contract');
-      require(token_.transfer(_addresses[i], _amount), 'could not send tokens');
     }
+
+    for (uint256 i = 0; i < _addresses.length; i++)
+      require(token_.transfer(_addresses[i], _amount), 'could not send tokens');
   }
 }
